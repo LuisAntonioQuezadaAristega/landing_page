@@ -3,11 +3,8 @@ let loaded = (eventLoaded) => {
     myform.addEventListener('submit', ( eventSubmit ) => { 
 
         eventSubmit.preventDefault();
-
-        let nombreValue = nombre.value;
-        let correoValue = correo.value;
     
-        if( nombreValue.length == 0 ) {
+        if( nombre.value.length == 0 ) {
           
           nombre.focus()
     
@@ -16,7 +13,7 @@ let loaded = (eventLoaded) => {
           return;
         }
 
-        if( correoValue.length == 0 ) {
+        if( correo.value.length == 0 ) {
           
             correo.focus()
       
@@ -25,6 +22,29 @@ let loaded = (eventLoaded) => {
           return;
         }
         
+        const formulario = document.getElementById('formulario');
+		    formulario.addEventListener('submit',(event)=>{
+			    event.preventDefault(); const nombre = document.getElementById('nombre').value;
+			    const correo = document.getElementById('correo').value;
+			    const tipo = document.getElementById('tipo').value;
+			    const datos = {
+				    nombre:nombre,
+				    correo:correo, 
+				    tipo:tipo
+			    };
+			    fetch('https://proyecto02-49e35-default-rtdb.firebaseio.com/collection.json', {
+				    method: 'POST',
+				    body: JSON.stringify(datos),
+				    headers: {
+				    	'Content-Type': 'application/json'
+				    }
+			    })
+			    .then(respuesta => respuesta.json())
+			    .then(datos => {
+				    console.log(datos); // Imprimir la respuesta del servidor
+				  })
+				  .catch(error => console.error(error));
+		    });
         debugger;
     
     })
