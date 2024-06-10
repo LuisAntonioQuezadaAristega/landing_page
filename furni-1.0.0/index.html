@@ -390,8 +390,9 @@
 					</div>
 				</div>
 
-				<div class="row">
+				
 
+				<div class="row">
 					<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 						<div class="post-entry">
 							<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
@@ -427,11 +428,50 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-		<!-- End Blog Section -->	
+		<!-- End Blog Section -->
+
+		<!-- Start tabla -->
+		<div id="resultados" class="blog-section">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-md-6">
+						<h2 class="section-title">Más pedidos</h2>
+					</div>
+					<div class="col-md-6 text-start text-md-end">
+						<a href="#" class="more">View Info</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="p-3 p-lg-5 border bg-white">
+						<table class="table site-block-order-table mb-5">
+							<thead>
+								<th>Consola</th>
+								<th>Conteo</th>
+							</thead>
+							<tbody id="tablebody">
+								<tr>
+									<th>SWITCH OLED</th>
+									<td>0</td>
+								</tr>
+								<tr>
+									<th>PS5</th>
+									<td>0</td>
+								</tr>
+								<tr>
+									<th>XBOX SERIES X</th>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End tabla -->
 
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
@@ -453,12 +493,11 @@
 								<div class="col-auto">
 									<input type="email" class="form-control" placeholder="Enter your email" id="correo">
 								</div>
-								<div>
-									<label for="tipo">Tipo de informacion que desea recibir:</label>
-									<select id="tipo" name="tipo">
-										<option value="Todo">Todo</option>
-										<option value="Descuentos">Descuentos</option>
-										<option value="NuevoProducto">Nuevo Producto</option>
+								<div class="col-auto">
+									<select id="consola" name="consola" class="form-control">
+										<option value="SWITCH_OLED">SWITCH OLED</option>
+										<option value="PS5">PS5</option>
+										<option value="XBOX_SERIES_X">XBOX SERIES X</option>
 									</select>
 								</div>
 								<div class="col-auto">
