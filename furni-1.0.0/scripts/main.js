@@ -41,11 +41,10 @@ let loaded = (eventLoaded) => {
 		.then(respuesta => respuesta.json())
 		.then(datos => {
 			alert("tu respuesta ha sido guardada!")
+			location.reload();
 			//console.log(datos); // Imprimir la respuesta del servidor
 		})
 		.catch(error => console.error(error));
-		
-        debugger;
     })
 }
 
@@ -71,15 +70,16 @@ async function obtenerDatos() {
 	total = 0
 	tablebody.innerHTML = ''
 
-	console.log(votesMap);
+	//console.log(votesMap);
 
-	/*for(let key of votesMap.keys()){
-		template = '
+	for(let key of votesMap.keys()){
+		let template = `
 			<tr>
-				<td>${categoria}</td>
-				<td>${conteo}</td>
+				<td>${key}</td>
+				<td>${votesMap.get(key)}</td>
 			</tr>
-			'
-	}*/
+			`
+		tablebody.innerHTML += template
+	}
 
 }
