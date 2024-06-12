@@ -71,10 +71,10 @@ async function obtenerDatos() {
 	tablebody.innerHTML = ''
 
 	//console.log(votesMap);
-
+	
 	for(let key of votesMap.keys()){
 		let template = `
-			<tr>
+			<tr class=${key}>
 				<td>${key}</td>
 				<td>${votesMap.get(key)}</td>
 			</tr>

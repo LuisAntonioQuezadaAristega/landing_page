@@ -712,3 +712,16 @@ textarea {
     height: 50px;
     border-radius: 50%;
     background: rgba(85, 69, 49, 0.2); }
+
+.SWITCH_OLED:hover{
+  background-color: red;
+}
+.PS5:hover{
+  background-color: blue;
+}
+.XBOX_SERIES_X:hover{
+  background-color: green;
+}
+.SWITCH_OLED:hover td, .PS5:hover td, .XBOX_SERIES_X:hover td{
+  color: white;
+}
